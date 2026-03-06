@@ -1,0 +1,46 @@
+# sources.yml
+schema_version: "1.0"
+mcp_name: "Honduran Law MCP"
+jurisdiction: "HN"
+
+sources:
+  - name: "Justia Honduras — Legislación Hondureña"
+    authority: "Asamblea Nacional Legislativa de Honduras (secondary aggregator)"
+    official_portal: "https://honduras.justia.com"
+    canonical_identifier: "Justia Honduras document slug"
+    retrieval_method: "HTML_SCRAPE"
+    api_documentation: "N/A — HTML scraping of public aggregator"
+    update_frequency: "monthly"
+    last_ingested: "2026-01-01"
+    license_or_terms:
+      type: "Public Domain Aggregation"
+      url: "https://honduras.justia.com"
+      summary: "Justia aggregates publicly available Honduran legislation; underlying legislation is in the public domain as official government texts"
+    coverage:
+      scope: "Major Honduran legislation including the Constitución de la República de Honduras (1982 as amended), Código Civil, Código Penal, Código de Comercio, Ley de Transparencia y Acceso a la Información Pública (Decreto 170-2006), Ley de Protección de Datos Personales (Decreto 182-2014), and ~200 key statutes"
+      limitations: "Justia Honduras coverage focuses on major national legislation; departmental and municipal ordinances not included; some legislation may lag official publication in La Gaceta; unofficial aggregator — cross-reference with La Gaceta for authoritative text"
+    languages:
+      - "es"
+
+  - name: "La Gaceta — Diario Oficial de la República de Honduras"
+    authority: "República de Honduras — Secretaría de la Presidencia"
+    official_portal: "https://www.tsc.gob.hn/web/leyes/gaceta_oficial.php"
+    canonical_identifier: "Número de Gaceta + date"
+    retrieval_method: "HTML_SCRAPE"
+    api_documentation: "N/A"
+    update_frequency: "daily"
+    last_ingested: "PENDING"
+    license_or_terms:
+      type: "Honduran Government Public Domain"
+      url: "https://www.tsc.gob.hn"
+      summary: "Official government gazette; authoritative primary source for all promulgated Honduran legislation"
+    coverage:
+      scope: "All officially promulgated legislation, decrees, and regulations from publication date"
+      limitations: "Historical gazette issues may be in PDF-only format; full-text search limited"
+    languages:
+      - "es"
+
+data_freshness:
+  automated_checks: true
+  check_frequency: "weekly"
+  last_verified: "2026-01-01"
